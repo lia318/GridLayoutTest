@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<gridlayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:rowCount="2"
     android:columnCount="4"
     tools:context="com.example.sojun.gridlayouttest.MainActivity">
@@ -14,28 +14,31 @@
         android:text="1"
         android:layout_row = "0"
         android:layout_column="0"
-        />
+        android:layout_rowSpan="2"
+        android:layout_gravity="fill_vertical" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2"
         android:layout_row = "0"
-        android:layout_column="1"/>
+        android:layout_column="1"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3"
         android:layout_row = "0"
-        android:layout_column="3"/>
+        android:layout_column="3" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="4"
         android:layout_row = "1"
-        android:layout_column="1"/>
+        android:layout_column="1" />
 
     <Button
         android:layout_width="wrap_content"
@@ -51,6 +54,9 @@
         android:layout_row = "1"
         android:layout_column="3"/>
 
-</gridlayout>
+</GridLayout>
 
-<!-- rowCount : 행 / columnCount : 열 -->
+<!-- rowCount : 행 / columnCount : 열
+     rowSpan, columnSpan : 셀 병합하는 속성
+     layout_gravity="fill_vertical" => GridLayout에 height="wrap_content"
+     붙여야지만 원하는 크기로 병합하여 사용할 수 있다. -->
